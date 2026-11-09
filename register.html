@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - Japan Dine</title>
+    <link rel="stylesheet" href="css/desktop.css" media="screen">
+</head>
+<body>
+    <header>
+        <h1>Japan Dine</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="recommend.html">Recommend</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="bill.html">Bill Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Create an Account</h2>
+        <div id="registerError" class="error-msg-box" style="display:none;"></div>
+        
+        <section class="form-section">
+            <form id="registerForm" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" method="POST">
+                <label for="regUsername">Username:</label>
+                <input type="text" id="regUsername" name="username">
+
+                <label for="regEmail">Email Address:</label>
+                <input type="text" id="regEmail" name="email">
+
+                <label for="regPhone">Phone Number (digits only, 8-15 digits):</label>
+                <input type="text" id="regPhone" name="phone">
+
+                <label for="regPassword">Password (min 10 chars, upper/lower/number/special):</label>
+                <input type="password" id="regPassword" name="password">
+
+                <label for="regConfirmPassword">Confirm Password:</label>
+                <input type="password" id="regConfirmPassword">
+
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="genderM" name="gender" value="Male"> <label for="genderM">Male</label>
+                    <input type="radio" id="genderF" name="gender" value="Female"> <label for="genderF">Female</label>
+                    <input type="radio" id="genderO" name="gender" value="Other"> <label for="genderO">Other</label>
+                </div>
+
+                <label for="regDiet">Dietary Preference:</label>
+                <select id="regDiet" name="diet">
+                    <option value="None">None</option>
+                    <option value="Halal">Halal</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+
+                <label for="regCountry">Country/Region:</label>
+                <input type="text" id="regCountry" name="country">
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Japan Dine Platform.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

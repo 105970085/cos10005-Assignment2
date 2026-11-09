@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Recommendations - Japan Dine</title>
+    <link rel="stylesheet" href="css/desktop.css" media="screen">
+</head>
+<body>
+    <header>
+        <h1>Japan Dine</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="recommend.html" class="active">Recommend</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="bill.html">Bill Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Personalized Restaurant Recommendation</h2>
+        <section class="form-section">
+            <form id="recommendForm">
+                <label for="dietPreference">Dietary Preference:</label>
+                <select id="dietPreference">
+                    <option value="none">None (Eat Anything)</option>
+                    <option value="halal">Halal</option>
+                    <option value="vegan">Vegan</option>
+                </select>
+
+                <label for="budgetRange">Budget Range (Per Person):</label>
+                <select id="budgetRange">
+                    <option value="low">Low (Under ¥2,500)</option>
+                    <option value="medium">Medium (Under ¥10,000)</option>
+                    <option value="high">High (¥10,000 or Over)</option>
+                </select>
+
+                <label for="diningPurpose">Dining Purpose:</label>
+                <select id="diningPurpose">
+                    <option value="family">Family Gathering</option>
+                    <option value="date">Romantic Date</option>
+                    <option value="business">Business Meeting</option>
+                </select>
+
+                <button type="button" id="btnRecommend">Match Restaurants</button>
+            </form>
+        </section>
+
+        <section id="recommendResults" class="results-section">
+            <!-- JS generates a list of recommended restaurants here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Japan Dine Platform.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

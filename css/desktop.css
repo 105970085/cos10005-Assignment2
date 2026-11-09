@@ -1,0 +1,871 @@
+/* font import */
+@import url('https://googleapis.com');
+
+/* General Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', 'Quicksand', 'Yu Gothic', sans-serif;
+    line-height: 1.6;
+    color: #0e0800;
+    background-color: #ded4c3; /* ほんのり紫がかった優しい白 */
+}
+
+/* Header */
+header {
+    background-color: #292A27;
+    color: #F7F4ED;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1.2rem;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+nav ul li a {
+    display: block;
+    color: #F7F4ED;
+    padding: 0.65rem 1.15rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+nav ul li a.active {
+    background-color: #A64B36;
+    color: #FFFFFF;
+}
+
+nav ul li a:hover {
+    transform: translateY(-2px);
+    background-color: #A64B36;
+    filter: brightness(1.5);
+    color: #FFFFFF;
+}
+
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 3.5rem auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.3rem;
+    line-height: 1.3;
+    color: #292A27;
+    margin-bottom: 1.2rem;
+}
+
+.hero h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 3px;
+    background-color: #A64B36;
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: #625F57;
+    margin-bottom: 0.4rem;
+}
+
+.hero-figure {
+    margin: 2rem auto 0;
+    max-width: 950px;
+    text-align: center;
+}
+
+.hero-figure img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(41, 42, 39, 0.12);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.hero-figure img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(41, 42, 39, 0.2);
+}
+
+.hero-figure figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    color: #77736A;
+}
+
+.hero-figure figcaption a {
+    color: #A64B36;
+    text-decoration: underline;
+}
+
+/* About Japan Dine */
+.features {
+    margin-bottom: 3rem;
+}
+
+.features > h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #292A27;
+    margin-bottom: 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* Cards */
+.card {
+    background-color: #FFFFFF;
+    color: #292A27;
+    padding: 1.7rem;
+    border: 1px solid #E9E2D5;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(41, 42, 39, 0.06);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(41, 42, 39, 0.12);
+}
+
+.card h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    color: #A64B36;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid #E9E2D5;
+}
+
+/* Card Lists */
+.card ul {
+    margin-top: 0.5rem;
+    padding-left: 1.3rem;
+}
+
+.card li {
+    color: #625F57;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.card li::marker {
+    color: #A64B36;
+}
+
+.card p {
+    color: #625F57;
+    font-size: 0.92rem;
+    margin-bottom: 1.4rem;
+}
+
+.card strong {
+    color: #292A27;
+    font-weight: 700;
+}
+
+/* Service Links */
+.card a {
+    display: inline-block;
+    color: #A64B36;
+    background-color: #F7F1E8;
+    padding: 0.55rem 0.9rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.card a:hover {
+    background-color: #A64B36;
+    color: #FFFFFF;
+    transform: translateX(4px);
+}
+
+.card a:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid #D9A36F;
+    outline-offset: 3px;
+}
+
+
+/* footer */
+footer {
+    background-color: #292A27;
+    color: #D9C9AC;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+}
+
+
+
+
+
+/* =========================================
+   Common Form Styles
+   Register / Reservation / Recommend / Bill
+========================================= */
+
+.form-section {
+    background-color: #FFFFFF;
+    padding: 2.5rem;
+    border: 1px solid #E9E2D5;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(41, 42, 39, 0.07);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #A64B36;
+}
+
+/* Form labels */
+
+form label {
+    display: block;
+    margin-top: 1.4rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #292A27;
+}
+
+/* Input fields */
+
+form input[type="text"],
+form input[type="password"],
+form input[type="number"],
+form input[type="datetime-local"],
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    margin-top: 0.45rem;
+    border: 1px solid #D9CFC0;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #292A27;
+    background-color: #FBFAF7;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #A64B36;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(166, 75, 54, 0.12);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Radio group */
+
+.radio-group {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    margin-top: 0.5rem;
+    border: 1px solid #D9CFC0;
+    border-radius: 7px;
+    background-color: #FBFAF7;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: #A64B36;
+    cursor: pointer;
+}
+
+.radio-group label {
+    display: inline;
+    margin: 0 1.2rem 0 0.3rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Form buttons */
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 0.95rem 1rem;
+    margin-top: 2rem;
+    background-color: #A64B36;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(166, 75, 54, 0.18);
+    transition: background-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+form button:hover {
+    background-color: #873B2B;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(166, 75, 54, 0.25);
+}
+
+/* =========================================
+Restaurant List
+========================================= */
+
+.restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.restaurant-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E9E2D5;
+    border-radius: 14px;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 5px 18px rgba(41, 42, 39, 0.06);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(41, 42, 39, 0.12);
+}
+
+.restaurant-card img {
+    width: 280px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 9px;
+    flex-shrink: 0;
+}
+
+/* Restaurant information */
+
+.restaurant-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.restaurant-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    color: #292A27;
+    margin-bottom: 0.6rem;
+}
+
+.restaurant-card p {
+    margin-bottom: 0.8rem;
+    font-size: 0.93rem;
+    line-height: 1.65;
+    color: #625F57;
+}
+
+.restaurant-card .cuisine {
+    display: inline-block;
+    color: #A64B36;
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+.restaurant-card strong {
+    color: #292A27;
+}
+
+/* Book Now button */
+
+.restaurant-card .btn {
+    align-self: flex-start;
+    display: inline-block;
+    background-color: #A64B36;
+    color: #FFFFFF;
+    padding: 0.65rem 1.5rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.restaurant-card .btn:hover {
+    background-color: #873B2B;
+    transform: translateY(-2px);
+}
+
+.restaurant-image figcaption {
+    font-size: 0.85rem;
+    color: #77736A;
+}
+
+.restaurant-image figcaption a {
+    color: #A64B36;
+    text-decoration: underline;
+}
+
+/* =========================================
+Recommendation Results
+========================================= */
+
+#recommendResults {
+    margin-top: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.match-card {
+    background-color: #FFFFFF;
+    padding: 1.6rem;
+    border: 1px solid #E9E2D5;
+    border-left: 5px solid #A64B36;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(41, 42, 39, 0.06);
+    margin-top: 1.2rem;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(41, 42, 39, 0.1);
+}
+
+.match-card button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background-color: #A64B36;
+    color: #FFFFFF;
+    padding: 0.65rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(166, 75, 54, 0.15);
+    transition: background-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.match-card button:hover {
+    background-color: #873B2B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(166, 75, 54, 0.25);
+}
+
+.match-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+}
+
+/* =========================================
+   Deposit Display
+   Reservation / Bill Calculator
+========================================= */
+
+.deposit-display {
+    margin-top: 2rem;
+    padding: 1.3rem;
+    background-color: #F7F1E8;
+    border-left: 4px solid #A64B36;
+    border-radius: 7px;
+    color: #292A27;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.deposit-display strong {
+    color: #292A27;
+}
+
+/* =========================================
+    Checkbox Rows
+========================================= */
+
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    font-size: 0.93rem;
+    line-height: 1.5;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0.15rem 0 0;
+    accent-color: #A64B36;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-row label {
+    margin: 0;
+    font-weight: 400;
+    color: #625F57;
+    cursor: pointer;
+}
+
+/* =========================================
+   Bill Calculator
+========================================= */
+
+.bill-intro {
+    margin-bottom: 1.5rem;
+    color: #625F57;
+    text-align: center;
+}
+
+.bill-breakdown-title {
+    color: #A64B36;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.bill-divider {
+    margin: 0.8rem 0;
+    border: 0;
+    border-top: 1px solid #D9CFC0;
+}
+
+.bill-total {
+    font-size: 1.25rem;
+    color: #A64B36;
+    font-weight: 700;
+}
+
+.deposit-display p {
+    margin: 0.5rem 0;
+    color: #625F57;
+}
+
+/* =========================================
+   Modal Error Window
+========================================= */
+
+/* Dark background overlay */
+#scrnOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Error window */
+#errWin {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 450px;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    padding: 1.5rem;
+    background-color: #F7F4ED;
+    color: #292A27;
+    border: 1px solid #D9C9AC;
+    border: 5px solid #A64B36;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+#errWin h3 {
+    color: #A64B36;
+    margin-top: 0;
+}
+
+#errWin ul {
+    padding-left: 1.3rem;
+}
+
+#errWin li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Close button */
+#errBtn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background-color: #A64B36;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+#errBtn:hover {
+    background-color: #873B2B;
+}
+
+
+
+/* =========================================
+   Responsive Design
+========================================= */
+
+/* Tablet: 768px - 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    header {
+        padding: 1.7rem 1rem 1.3rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        gap: 0.2rem;
+    }
+
+    nav ul li a {
+        padding: 0.55rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        margin: 2.5rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero-figure img {
+        height: 340px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .card {
+        padding: 1.4rem;
+    }
+
+    .restaurant-card {
+        gap: 1.3rem;
+        padding: 1.2rem;
+    }
+
+    .restaurant-card img {
+        width: 240px;
+        height: 190px;
+    }
+
+    .form-section {
+        max-width: 650px;
+    }
+}
+
+
+/* Mobile: 767px and below */
+@media screen and (max-width: 767px) {
+
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 0.3rem;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.82rem;
+    }
+
+    main {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .hero {
+        margin-bottom: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .hero-figure img {
+        height: 240px;
+    }
+
+    .features > h3 {
+        font-size: 1.7rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1.3rem;
+    }
+
+    .form-section {
+        padding: 2rem 1.3rem;
+        border-radius: 10px;
+    }
+
+    .restaurant-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+
+    .restaurant-card img {
+        width: 100%;
+        height: 210px;
+    }
+
+    .restaurant-card .btn {
+        align-self: stretch;
+        text-align: center;
+    }
+
+    .restaurant-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .radio-group label {
+        margin-right: 0.5rem;
+    }
+
+    .checkbox-row {
+        font-size: 0.88rem;
+    }
+
+    #recommendResults {
+        margin-top: 2rem;
+    }
+
+    .match-card {
+        padding: 1.2rem;
+    }
+}

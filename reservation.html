@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Reservation - Japan Dine</title>
+    <link rel="stylesheet" href="css/desktop.css" media="screen">
+
+</head>
+<body>
+    <header>
+        <h1>Japan Dine</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="recommend.html">Recommend</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="reservation.html" class="active">Reservation</a></li>
+                <li><a href="bill.html">Bill Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Table Reservation Form</h2>
+        <div id="reservationError" class="error-msg-box" style="display:none;"></div>
+
+        <section class="form-section">
+            <form id="reservationForm" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" method="POST">
+                <label for="resName">Full Name:</label>
+                <input type="text" id="resName" name="fullname">
+
+                <label for="resEmail">Email Address:</label>
+                <input type="text" id="resEmail" name="email">
+
+                <label for="resPhone">Phone Number (min 10 digits):</label>
+                <input type="text" id="resPhone" name="phone">
+
+                <label for="resRestaurant">Select Restaurant:</label>
+                <select id="resRestaurant" name="restaurant">
+                    <option value="" data-deposit="0">-- Choose a Restaurant --</option>
+                    <option value="Yoroi Sushi" data-deposit="1500">Yoroi Sushi (Deposit: ¥1,500)</option>
+                    <option value="Yoshimura-ya" data-deposit="300">Yoshimura-ya (Deposit: ¥300)</option>
+                    <option value="Bikkuri Donkey" data-deposit="500">Bikkuri Donkey (Deposit: ¥500)</option>
+                    <option value="Yomenya Goemon" data-deposit="500">Yomenya Goemon (Deposit: ¥500)</option>
+                    <option value="Yakiniku no Mise Shinjuku" data-deposit="5000">Yakiniku no Mise Shinjuku (Deposit: ¥5,000)</option>
+                    <option value="CoCo Ichibanya" data-deposit="400">CoCo Ichibanya (Deposit: ¥400)</option>
+                    <option value="Daigo" data-deposit="5000">Daigo (Deposit: ¥5,000)</option>
+                    <option value="Ise Sueyoshi" data-deposit="5000">Ise Sueyoshi (Deposit: ¥5,000)</option>
+                    <option value="Ningyocho Imahan" data-deposit="3000">Ningyocho Imahan (Deposit: ¥3,000)</option>
+                </select>
+
+                <label for="resDate">Reservation Date & Time:</label>
+                <input type="datetime-local" id="resDate" name="date_time">
+
+                <label for="resPeople">Number of People:</label>
+                <input type="number" id="resPeople" name="people" min="1" value="1">
+
+                <label for="resRequest">Special Requests (Optional):</label>
+                <textarea id="resRequest" name="special_request" rows="3"></textarea>
+
+                <label>Optional Add-ons:</label>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="opt1" value="5000">
+                    <label for="opt1">Pick-up and drop-off service (+¥5,000 per person)</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="opt2" value="3000">
+                    <label for="opt2">Matcha & Traditional Sweets Souvenir Set (+¥3,000 per person)</label>
+                </div>
+
+                <div class="deposit-display">
+                    <strong>Total Calculated Deposit: </strong> <span id="displayDeposit">¥0</span>
+                    <input type="hidden" id="hiddenDeposit" name="deposit_amount" value="0">
+                </div>
+
+                <label for="resPaymentMethod">Deposit Payment Method:</label>
+                <select id="resPaymentMethod" name="payment_method">
+                    <option value="online">Online Payment (Credit Card)</option>
+                    <option value="voucher">Voucher Code</option>
+                </select>
+
+                <!-- 条件付き表示エリア: クーポン用 -->
+                <div id="voucherField" style="display: none;">
+                    <label for="resVoucher">Voucher Code (12 digits):</label>
+                    <input type="text" id="resVoucher" name="voucher_code">
+                </div>
+
+                <!-- 条件付き表示エリア: クレジットカード用 -->
+                <div id="creditCardField">
+                    <label for="resCardNum">Credit Card Number (Visa/MC=16, Amex=15 digits):</label>
+                    <input type="text" id="resCardNum" name="card_number" placeholder="Fake info for testing">
+                </div>
+
+                <div class="billing-email-group">
+                    <label for="resBillingEmail">Billing Email Address:</label>
+                    <input type="text" id="resBillingEmail" name="billing_email">
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="syncEmail">
+                        <label for="syncEmail">Same as email address</label>
+                    </div>
+                </div>
+
+                <button type="submit">Confirm Reservation</button>
+            </form>
+        </section>
+            
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Japan Dine Platform.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
