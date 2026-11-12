@@ -302,23 +302,14 @@ document.addEventListener("DOMContentLoaded", function () {
             let errors = [];
 
             // Retrieve values safely whilst checking whether each element exists
-            const nameEl = document.getElementById("resName");
-            const emailEl = document.getElementById("resEmail");
-            const phoneEl = document.getElementById("resPhone");
-            const restaurantEl = document.getElementById("resRestaurant");
-            const dateEl = document.getElementById("resDate");
-            const peopleEl = document.getElementById("resPeople");
-            const payMethodEl = document.getElementById("resPaymentMethod");
-            const billingEmailEl = document.getElementById("resBillingEmail");
-
-            const name = nameEl ? nameEl.value.trim() : "";
-            const email = emailEl ? emailEl.value.trim() : "";
-            const phone = phoneEl ? phoneEl.value.trim() : "";
-            const restaurant = restaurantEl ? restaurantEl.value : "";
-            const dateStr = dateEl ? dateEl.value : "";
-            const people = peopleEl ? parseInt(peopleEl.value) || 0 : 0;
-            const payMethod = payMethodEl ? payMethodEl.value : "";
-            const billingEmail = billingEmailEl ? billingEmailEl.value.trim() : "";
+            const name = document.getElementById("resName").value.trim();
+            const email = document.getElementById("resEmail").value.trim();
+            const phone = document.getElementById("resPhone").value.trim();
+            const restaurant = document.getElementById("resRestaurant").value;
+            const dateStr = document.getElementById("resDate").value;
+            const people = parseInt(document.getElementById("resPeople").value) || 0;
+            const payMethod = document.getElementById("resPaymentMethod").value;
+            const billingEmail = document.getElementById("resBillingEmail").value.trim();
 
             // 1. Check that required fields are not left blank
             if (!name || !email || !phone || !restaurant || !dateStr || !billingEmail) {
