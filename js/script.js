@@ -584,7 +584,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Display of calculation results
             const outBase = document.getElementById("outBase");
             const outOptions = document.getElementById("outOptions");
-            const outFee = document.getElementById("outFee");
             const outTotal = document.getElementById("outTotal");
 
             if (outBase) {
@@ -593,10 +592,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (outOptions) {
                 outOptions.innerText = "¥" + totalOptions.toLocaleString();
-            }
-
-            if (outFee) {
-                outFee.innerText = "¥" + totalFee.toLocaleString();
             }
 
             if (outTotal) {
