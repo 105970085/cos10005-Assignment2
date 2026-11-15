@@ -509,6 +509,13 @@ Recommendation Results
     border-radius: 10px;
     box-shadow: 0 5px 18px rgba(41, 42, 39, 0.06);
     margin-top: 1.2rem;
+
+    /* Align the text on the left and the photograph on the right side by side */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+
     transition: transform 0.25s ease,
                 box-shadow 0.25s ease;
 }
@@ -516,6 +523,21 @@ Recommendation Results
 .match-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(41, 42, 39, 0.1);
+}
+
+/* The text group on the left */
+.match-info {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Photo style on the right */
+.match-image {
+    width: 220px;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* 写真が潰れるのを防ぐ */
 }
 
 .match-card button {
@@ -866,6 +888,14 @@ Recommendation Results
     }
 
     .match-card {
+        flex-direction: column;
+        align-items: stretch;
         padding: 1.2rem;
     }
+
+    .match-image {
+        width: 100%;
+        height: 180px;
+    }
+
 }
