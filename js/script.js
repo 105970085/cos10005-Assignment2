@@ -375,15 +375,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnRecommend) {
 
         const restaurantsData = [
-            { name: "Yoroi Sushi", diet: "none", budget: "medium", purpose: "date" },
-            { name: "Yoshimura-ya", diet: "none", budget: "low", purpose: "family" },
-            { name: "Bikkuri Donkey", diet: "none", budget: "low", purpose: "family" },
-            { name: "Yomenya Goemon", diet: "none", budget: "low", purpose: "family" },
-            { name: "Yakiniku no Mise Shinjuku", diet: "halal", budget: "high", purpose: "date" },
-            { name: "CoCo Ichibanya", diet: "halal", budget: "low", purpose: "family" },
-            { name: "Daigo", diet: "vegan", budget: "high", purpose: "business" },
-            { name: "Ise Sueyoshi", diet: "vegan", budget: "high", purpose: "date" },
-            { name: "Ningyocho Imahan", diet: "halal", budget: "high", purpose: "business" }
+            { name: "Yoroi Sushi", diet: "none", budget: "medium", purpose: "date", image: "image/yoroi.png" },
+            { name: "Yoshimura-ya", diet: "none", budget: "low", purpose: "family", image: "images/yoshimura.png" },
+            { name: "Bikkuri Donkey", diet: "none", budget: "low", purpose: "family", image: "images/donkey.png" },
+            { name: "Yomenya Goemon", diet: "none", budget: "low", purpose: "family", image: "images/goemon.png" },
+            { name: "Yakiniku no Mise Shinjuku", diet: "halal", budget: "high", purpose: "date", image: "mise.png" },
+            { name: "CoCo Ichibanya", diet: "halal", budget: "low", purpose: "family", image: "images/coco.png" },
+            { name: "Daigo", diet: "vegan", budget: "high", purpose: "business", image: "images/daigo.png" },
+            { name: "Ise Sueyoshi", diet: "vegan", budget: "high", purpose: "date", image: "images/sueyoshi.png" },
+            { name: "Ningyocho Imahan", diet: "halal", budget: "high", purpose: "business", image: "images/imahan.png" }
         ];
 
         btnRecommend.addEventListener("click", function () {
@@ -432,6 +432,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const card = document.createElement("div");
                     card.className = "match-card";
+
+                    // A box to group the text and buttons on the left-hand side
+                    const infoContainer = document.createElement("div");
+                    infoContainer.className = "match-info";
 
                     const restaurantName = document.createElement("h3");
                     restaurantName.textContent = res.name;
@@ -485,10 +489,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     buttonContainer.appendChild(viewButton);
                     buttonContainer.appendChild(bookButton);
 
-                    // Add elements to card
-                    card.appendChild(restaurantName);
-                    card.appendChild(description);
-                    card.appendChild(buttonContainer);
+                    // Place the shop name, description and buttons in the infoContainer (on the left)
+                    infoContainer.appendChild(restaurantName);
+                    infoContainer.appendChild(description);
+                    infoContainer.appendChild(buttonContainer);
+
+                    // Create an image element to be displayed on the right-hand side
+                    const resImage = document.createElement("img");
+                    resImage.src = res.image;
+                    resImage.alt = res.name;
+                    resImage.className = "match-image";
+
+                    // Add ‘information on the left’ and ‘image on the right’ to the card
+                    card.appendChild(infoContainer);
+                    card.appendChild(resImage);
 
                     // Add the card to the results section
                     resultsSection.appendChild(card);
